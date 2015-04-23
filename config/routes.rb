@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+
+  #Deux consequence.
+  #Pour acceder a la pager about.html il faudra aller locaclhost:3000/about.
+  #Un path va etre creer about_path, qui renverra vers /about
   get '/about' => 'pages#about'
   root 'pages#home'
   # The priority is based upon order of creation: first created -> highest priority.
