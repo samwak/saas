@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+
+  resources :contacts
+
   #Deux consequence.
   #Pour acceder a la pager about.html il faudra aller locaclhost:3000/about.
   #Un path va etre creer about_path, qui renverra vers /about
