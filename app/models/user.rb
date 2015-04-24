@@ -6,4 +6,16 @@ class User < ActiveRecord::Base
 
 
    belongs_to :plan
+   attr_accessor :stripe_card_token
+
+   def save_with_payment
+   	if valid?
+   		# envoie l'email, le plan id et les infos carte a stripe
+   		customer = Stripe::Customer.create(description: email, plan: plan_id, card: stripe_card_token)
+   		self.stripe_customer_token = customer.id
+   		save!
+   	end
+   end
+
+
 end
