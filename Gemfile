@@ -40,6 +40,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+
+
+#Use devise for user auth
+  gem 'devise', '~> 3.4.1'
+
+#Use strip for handling payments
+  gem 'stripe', '~> 1.21.0'
+
+#Use figaro to hide secret keys
+  gem 'figaro', '~> 1.1.0'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -59,14 +70,6 @@ group :development, :test do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 
-#Use devise for user auth
-  gem 'devise', '~> 3.4.1'
-
-#Use strip for handling payments
-  gem 'stripe', '~> 1.21.0'
-
-#Use figaro to hide secret keys
-  gem 'figaro', '~> 1.1.0'
 
 end
 
