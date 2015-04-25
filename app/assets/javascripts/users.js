@@ -2,9 +2,7 @@ $(document).ready(function() {
   Stripe.setPublishableKey($('meta[name="stripe-key"]').attr('content'));
   // Watch for a form submission:
   $("#form-submit-btn").click(function(event) {
-  	//Suspend l'event par default, a savoir le submit
     event.preventDefault();
-    //Disable le bnt submit, pour eviter que l'utilisateur clique plusierus fois de suite dessus
     $('input[type=submit]').prop('disabled', true);
     var error = false;
     var ccNum = $('#card_number').val(),
@@ -14,7 +12,6 @@ $(document).ready(function() {
 
     if (!error) {
       // Get the Stripe token:
-      //Envoie les infos a Stripe, et une fois que stripe renvoie un Token on applique la methode stripeResponseHandler
       Stripe.createToken({
         number: ccNum,
         cvc: cvcNum,
@@ -39,3 +36,5 @@ $(document).ready(function() {
     f.get(0).submit(); 
   }
 });
+
+
