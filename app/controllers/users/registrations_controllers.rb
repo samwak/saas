@@ -12,6 +12,7 @@ before_filter :select_plan, only: :new
 					resource.save
 				end
 			end
+		end
 	end	
 
 
