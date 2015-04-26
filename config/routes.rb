@@ -2,6 +2,11 @@ Rails.application.routes.draw do
 
 
   devise_for :users, controllers: { registration: 'users/registrations'}
+
+  #Resultat: les pages de profile sont accessible via /users/:user_id/profile voir rake routes
+  resources :users do 
+    resource :profile
+  end 
   resources :contacts
 
   #Deux consequence.
