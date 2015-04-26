@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
 			body = params[:contact][:comments]
 
 			ContactMailer.contact_email(name, email, body).deliver
-			ContactNotifier.send_signup_email(name, email, body).deliver
+			ContactNotifier.send_contact_email(email).deliver
 			flash[:success] = 'Message sent'
 			redirect_to new_contact_path
 		else
