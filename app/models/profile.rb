@@ -1,5 +1,5 @@
 class Profile < ActiveRecord::Base
 
-belong_to :user
+belongs_to :user
 
 end
